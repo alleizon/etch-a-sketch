@@ -28,6 +28,18 @@ for (let row = 1; row <= 16; row++) {
 
         gridBox.classList.add('grid-box');
         rowDiv.appendChild(gridBox);
+        gridBox.addEventListener('mouseover', changeGridBoxColor);
     }
     padContainer.appendChild(rowDiv);
+}
+
+const colorPicker = document.querySelector('#color-picker');
+let userColor;
+colorPicker.addEventListener('input', (e) => {
+    userColor = e.target.value;
+});
+
+function changeGridBoxColor(e) {
+    e.target.style.backgroundColor = userColor ? `${userColor}` : 'white';
+    console.log(e, userColor);
 }
