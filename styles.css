@@ -3,6 +3,13 @@
     color:white;
 }
 
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+}
+
 body {
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
@@ -46,5 +53,33 @@ body {
     border: 1px solid #40e0d017;
     flex: 1 1 auto;
 
+}
+
+.color {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 200px;
+}
+
+input#color-picker {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+}
+
+#color-picker:hover {
+    cursor: pointer;
+    
+}
+
+#color-picker::-webkit-color-swatch {
+    border-radius: 50%;
+    box-shadow: 0 0 10px turquoise;
 }
 
