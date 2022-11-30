@@ -1,6 +1,48 @@
-body {
+* {
     box-sizing: border-box;
+}
+
+body {
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
     padding: 0;
+    height: 100vh;
+    background-image: linear-gradient(0deg, black, #000e23);
+    display:flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.container,
+.panel-container,
+.pad-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    gap: 20px;
+    align-items: stretch;
+}
+
+.pad-container {
+    width: 960px;
+    border: 2px solid turquoise;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    box-shadow: 0px 0px 10px #00cbff;
+    border-radius: 1em;
+}
+
+.row {
+    display:flex;
+    flex: 1;
+}
+
+.grid-box {
+    border: 1px solid #40e0d017;
+    flex: 1 1 auto;
+
 }
