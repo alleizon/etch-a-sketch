@@ -91,6 +91,9 @@ h1 {
 .grid-box {
     border: 1px solid #ffffff33;
     flex: 1 1 auto;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
 }
 
 .color {

@@ -6,7 +6,6 @@ const padContainer = document.querySelector('.pad-container');
 
 function resetGrid(event) {
 
-    const padContainer = document.querySelector('.pad-container');
     const rows = document.querySelectorAll('.row')
 
     if (event.type == 'input') {
@@ -49,6 +48,7 @@ function resetGrid(event) {
             gridBox.classList.add('grid-box');
             rowDiv.appendChild(gridBox);
             gridBox.addEventListener('mouseover', changeGridBoxColor);
+            gridBox.addEventListener('mousedown', changeGridBoxColor);
         }
         padContainer.appendChild(rowDiv);
     }
@@ -62,7 +62,13 @@ colorPicker.addEventListener('input', (e) => {
     userColor = e.target.value;
 });
 
+// change grid box color based on mouseup/down
+let mouseDown = false;
+padContainer.addEventListener('mousedown', () => mouseDown = !mouseDown);
+padContainer.addEventListener('mouseup', () => mouseDown = !mouseDown);
+
 function changeGridBoxColor(e) {
+    if ((e.type == 'mouseover' && !mouseDown)) return;
     if (selectedBtn) {
         const R = Math.floor(Math.random()*256);
         const G = Math.floor(Math.random()*256);
