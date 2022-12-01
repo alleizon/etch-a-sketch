@@ -33,11 +33,11 @@ function resetGrid(event) {
             // corners
             row == 1 && column == 1 
             ? gridBox.style.borderTopLeftRadius = '0.9em' : 
-            row == 1 && column == 16 
+            row == 1 && column == grid 
             ? gridBox.style.borderTopRightRadius = '0.9em' : 
-            row == 16 && column == 1 
+            row == grid && column == 1 
             ? gridBox.style.borderBottomLeftRadius = '0.9em' :
-            row == 16 && column == 16
+            row == grid && column == grid
             ? gridBox.style.borderBottomRightRadius = '0.9em' :
             null;
             
