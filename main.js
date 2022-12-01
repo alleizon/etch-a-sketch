@@ -33,13 +33,14 @@ for (let row = 1; row <= 16; row++) {
     padContainer.appendChild(rowDiv);
 }
 
+// Initialize color on page load
+
 const colorPicker = document.querySelector('#color-picker');
-let userColor;
+let userColor = '#40e0d0';
 colorPicker.addEventListener('input', (e) => {
     userColor = e.target.value;
 });
 
 function changeGridBoxColor(e) {
-    e.target.style.backgroundColor = userColor ? `${userColor}` : 'white';
-    console.log(e, userColor);
+    e.target.style.backgroundColor = userColor ? `${userColor}` : '#40e0d0';
 }
