@@ -4,10 +4,16 @@ document.addEventListener("DOMContentLoaded", resetGrid);
 
 const padContainer = document.querySelector('.pad-container');
 
-function resetGrid() {
+function resetGrid(event) {
+    console.log(event);
 
     const padContainer = document.querySelector('.pad-container');
     const rows = document.querySelectorAll('.row')
+
+    if (event.type == 'input') {
+        const userInput = event.target.valueAsNumber;
+        if (userInput < 1 || userInput > 64) return;
+    }
 
     if (rows.length) {
         for (i = rows.length-1; i>=0; i--) {
@@ -15,12 +21,14 @@ function resetGrid() {
         }
     }
 
-    for (let row = 1; row <= 16; row++) {
+    const grid = event.type == 'input' ? event.target.valueAsNumber : gridInput.valueAsNumber;
+
+    for (let row = 1; row <= grid; row++) {
 
         const rowDiv = document.createElement('div')
         rowDiv.classList.add('row');
 
-        for (let column = 1; column <= 16; column++) {
+        for (let column = 1; column <= grid; column++) {
 
             const gridBox = document.createElement('div')
             // corners
@@ -63,3 +71,8 @@ function changeGridBoxColor(e) {
 
 const resetBtn = document.querySelector("#reset");
 resetBtn.addEventListener('click', resetGrid);
+
+// Grid size user selection 
+
+const gridInput = document.querySelector('#grid-size');
+gridInput.addEventListener('input', resetGrid);
