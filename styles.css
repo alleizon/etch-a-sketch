@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Good Times";
+    src: url("fonts/good\ times\ rg.otf") format("opentype");
+}
+
 * {
     box-sizing: border-box;
     color:white;
@@ -9,11 +14,12 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 
 #color-picker::-webkit-color-swatch {
     border-radius: 50%;
-    border: 2px solid #ffffffb2;
+    /* border: 2px solid #ffffffb2; */
+    box-shadow: 4px 0px 8px 0 rgba(15, 100, 255, 0.2), 0 6px 20px 0 rgba(15, 100, 255, 0.19);
 }
 
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Good Times", 'Arial Narrow', Arial, sans-serif;
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -53,7 +59,7 @@ h1 {
 
 .pad-container {
     max-width: 800px;
-    border: 2px solid #40e0d0;
+    border: 0.03px solid #40e0d0;
     flex-direction: column;
     align-items: stretch;
     justify-content: space-between;
