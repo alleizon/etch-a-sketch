@@ -6,14 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="main.js" defer></script>
-    <title>Etch-a-sketch</title>
+    <title>Etch-a-Sketch</title>
 </head>
 <body>
     <div class="container">
         <h1>Etch-a-Sketch</h1>
         <div class="panel-container">
-            <label for="background-color">Select color</label>
-            <input id="color-picker" type="color" value="#40e0d0">
+            <div class="panel-wrapper">
+                <label for="color-picker">Select color</label>
+                <input id="color-picker" type="color" value="#40e0d0">
+            </div>
+            <div class="panel-wrapper">
+                <label for="grid-size">Choose grid size <br> <span>(1-64)</span></label>
+                <input id="grid-size" type="number" value="16" min="1" max="64" required>
+            </div>
+            <button class="btn">Reset</button>
+            <button class="btn">Rainbow</button>
         </div>
         <div class="pad-wrapper">
             <div class="pad-container">
