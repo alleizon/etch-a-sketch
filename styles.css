@@ -75,10 +75,12 @@ h1 {
 }
 
 .panel-container {
-    gap: 20px;
+    gap: 30px;
+    align-self: center;
     justify-content: space-evenly;
     text-shadow: 1px 1px 1px #ffffff8c;
     font-size: 1em;
+    max-width: 800px;
 }
 
 .row {
@@ -166,3 +168,9 @@ label[for="grid-size"] {
 input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
   }
+
+.selected {
+    background-color: white;
+    text-shadow: 1px 1px 1px black;
+    box-shadow: 1px 1px 1px black;
+}

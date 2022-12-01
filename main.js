@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", resetGrid);
 const padContainer = document.querySelector('.pad-container');
 
 function resetGrid(event) {
-    console.log(event);
 
     const padContainer = document.querySelector('.pad-container');
     const rows = document.querySelectorAll('.row')
@@ -64,7 +63,13 @@ colorPicker.addEventListener('input', (e) => {
 });
 
 function changeGridBoxColor(e) {
-    e.target.style.backgroundColor = userColor ? `${userColor}` : '#40e0d0';
+    if (selectedBtn) {
+        const R = Math.floor(Math.random()*256);
+        const G = Math.floor(Math.random()*256);
+        const B = Math.floor(Math.random()*256);
+        const A = Math.floor(Math.random()*1000)/1000;
+        e.target.style.backgroundColor = `rgba(${R}, ${G}, ${B}, ${A})`;
+    } else e.target.style.backgroundColor = userColor ? `${userColor}` : '#40e0d0';
 }
 
 // Reset button 
@@ -76,3 +81,12 @@ resetBtn.addEventListener('click', resetGrid);
 
 const gridInput = document.querySelector('#grid-size');
 gridInput.addEventListener('input', resetGrid);
+
+// RGB button 
+
+const rgbBtn = document.querySelector("#rgb");
+let selectedBtn = false;
+rgbBtn.addEventListener('click', () => {
+    rgbBtn.classList.toggle('selected');
+    selectedBtn = selectedBtn ? false : true;
+});
