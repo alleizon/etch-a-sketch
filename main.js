@@ -41,9 +41,9 @@ function resetGrid(event) {
             null;
             
             if (row==1) gridBox.style.borderTop = '0';
-            if (row==16) gridBox.style.borderBottom = '0';
+            if (row==grid) gridBox.style.borderBottom = '0';
             if (column==1) gridBox.style.borderLeft = '0';
-            if (column==16) gridBox.style.borderRight = '0';
+            if (column==grid) gridBox.style.borderRight = '0';
 
             gridBox.classList.add('grid-box');
             rowDiv.appendChild(gridBox);
